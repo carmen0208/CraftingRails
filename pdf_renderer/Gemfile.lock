@@ -91,7 +91,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer (= 4.0.13)
   pdf_renderer!
+  rails (= 4.0.13)
   sqlite3
 
 BUNDLED WITH
