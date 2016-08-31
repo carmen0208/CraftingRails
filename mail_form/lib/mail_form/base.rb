@@ -14,10 +14,18 @@ module MailForm
    
     # suffix 1. Add the attribute suffix
     attribute_method_suffix '?'
+    
+    #email 1. Define a class attribute and initialize it
+    class_attribute :attribute_names
+    self.attribute_names = []
     def self.attributes(*names)
       attr_accessor(*names)
       # 3) Ask to define the prefix methods for the given attribute names
       define_attribute_methods(names)
+
+      #email 2 Add new names as they are defined
+      self.attribute_names += names
+
     end
 
     #resolve: ComplianceTest#test_persisted? [/Users/carmenliu/.rvm/gems/ruby-2.0.0-p643/gems/activemodel-4.0.13/lib/active_model/lint.rb:70]:
@@ -25,6 +33,16 @@ module MailForm
     def persisted?
       false
     end
+   
+    #email modeler
+    def deliver
+      if valid?
+        MailForm::Notifier.contact(self).deliver
+      else
+        false
+      end
+    end
+    
     protected
     # 4) Since we declared a "clear_" prefix, it expects to have a​
     #"clear_attribute" method defined, which receives an attribute​
@@ -37,6 +55,6 @@ module MailForm
     def attribute?(attribute)
       send(attribute).present?
     end
-
+    
   end
 end
