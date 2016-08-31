@@ -7,11 +7,11 @@ require "mail_form/version"
 Gem::Specification.new do |s|
   s.name        = "mail_form"
   s.version     = MailForm::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of MailForm."
-  s.description = "TODO: Description of MailForm."
+  s.authors     = ["Your name"]
+  s.email       = ["Your email"]
+  s.homepage    = ""
+  s.summary     = "Summary of MailForm."
+  s.description = "Description of MailForm."
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
