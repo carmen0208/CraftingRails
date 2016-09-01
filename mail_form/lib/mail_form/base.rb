@@ -10,6 +10,8 @@ module MailForm
     include ActiveModel::Validations
     
     include ActiveModel::AttributeMethods
+
+    include MailForm::Validators
     attribute_method_prefix 'clear_'
    
     # suffix 1. Add the attribute suffix
