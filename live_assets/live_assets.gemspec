@@ -18,5 +18,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.0.13"
 
+  s.add_development_dependency "puma"
   s.add_development_dependency "sqlite3"
 end
