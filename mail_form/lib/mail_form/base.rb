@@ -17,6 +17,12 @@ module MailForm
     # suffix 1. Add the attribute suffix
     attribute_method_suffix '?'
     
+    #callback 1 Add Callbacks behavior
+    extend ActiveModel::Callbacks
+
+    #callback 2 define a callback
+    define_model_callbacks :deliver
+
     #email 1. Define a class attribute and initialize it
     class_attribute :attribute_names
     self.attribute_names = []
@@ -43,7 +49,10 @@ module MailForm
     #email modeler
     def deliver
       if valid?
-        MailForm::Notifier.contact(self).deliver
+        #callback 3 run callbacks
+        run_callbacks(:deliver) do
+          MailForm::Notifier.contact(self).deliver
+        end
       else
         false
       end
