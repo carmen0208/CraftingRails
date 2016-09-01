@@ -27,7 +27,11 @@ module MailForm
       self.attribute_names += names
 
     end
-
+    def initialize(attributes={})
+      attributes.each do |attr,value|
+        self.public_send("#{attr}=",value)
+      end if attributes
+    end
     #resolve: ComplianceTest#test_persisted? [/Users/carmenliu/.rvm/gems/ruby-2.0.0-p643/gems/activemodel-4.0.13/lib/active_model/lint.rb:70]:
     #The model should respond to persisted?
     def persisted?
