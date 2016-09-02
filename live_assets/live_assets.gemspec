@@ -7,11 +7,11 @@ require "live_assets/version"
 Gem::Specification.new do |s|
   s.name        = "live_assets"
   s.version     = LiveAssets::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of LiveAssets."
-  s.description = "TODO: Description of LiveAssets."
+  s.authors     = ["Your name"]
+  s.email       = ["Your email"]
+  s.homepage    = ""
+  s.summary     = "Summary of LiveAssets."
+  s.description = "Description of LiveAssets."
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
